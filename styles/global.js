@@ -9,6 +9,7 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'nunito-bold',
     fontSize:20,
     color:'#333',
+    lineHeight:30,
   },
   paragrapgh: {
     marginVertical:8,
