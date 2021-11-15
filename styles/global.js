@@ -30,6 +30,22 @@ export const globalStyles = StyleSheet.create({
     lineHeight:20,
     color:'#333',
     marginTop:10,
+  },
+  // Modal
+  modalToggle: {
+    marginBottom:10,
+    borderWidth:1,
+    borderColor:'#ddd',
+    padding:10,
+    borderRadius:10,
+    alignSelf:'center',
+  },
+  modalClose:{
+    marginTop:20,
+    marginBottom:0,
+  },
+  modalContent:{
+    flex:1,
   }
 });
 
