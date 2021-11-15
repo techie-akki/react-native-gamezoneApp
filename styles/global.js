@@ -15,5 +15,30 @@ export const globalStyles = StyleSheet.create({
     marginVertical:8,
     lineHeight:20,
   },
-  
+  // review screen image
+  rating:{
+    flexDirection:'row',
+    justifyContent:'center',
+    paddingTop:16,
+    marginTop:16,
+    borderTopColor:'#ddd',
+    borderTopWidth:1,
+  },
+  reviewText:{
+    fontFamily:'nunito-regular',
+    fontSize: 18,
+    lineHeight:20,
+    color:'#333',
+    marginTop:10,
+  }
 });
+
+export const images ={
+  ratings:{
+    '1': require('../assets/rating-1.png'),
+    '2': require('../assets/rating-2.png'),
+    '3': require('../assets/rating-3.png'),
+    '4': require('../assets/rating-4.png'),
+    '5': require('../assets/rating-5.png'),
+  }
+};
