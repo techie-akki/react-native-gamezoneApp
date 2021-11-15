@@ -20,7 +20,7 @@ function HomeStack() {
     screenOptions={screenOptionsStyle}
     
     >
-      <Stack.Screen name="GameZone" component={Home} />
+      <Stack.Screen name="GameZone" component={Home} options={({navigation})=>{return {headerTitle:()=> <Header navigation={navigation} title='GameZone'/>}}} />
       <Stack.Screen name="Review" component={Review}  />
     </Stack.Navigator>
   );
