@@ -14,5 +14,6 @@ export const globalStyles = StyleSheet.create({
   paragrapgh: {
     marginVertical:8,
     lineHeight:20,
-  }
+  },
+  
 });
