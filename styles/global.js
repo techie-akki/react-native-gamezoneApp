@@ -46,7 +46,17 @@ export const globalStyles = StyleSheet.create({
   },
   modalContent:{
     flex:1,
-  }
+  },
+  //Formikform
+  input: {
+    borderWidth:1,
+    borderColor:'#ddd',
+    padding:10,
+    borderRadius:6,
+    fontSize:18,
+    marginBottom:5,
+  },
+  
 });
 
 export const images ={

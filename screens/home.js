@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import {View, Text, TouchableOpacity, FlatList, Modal} from "react-native";
+import {View, Text, TouchableOpacity, FlatList, Modal,TouchableWithoutFeedback, Touchable, Keyboard} from "react-native";
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
 import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from "./reviewForm";
 
 export default function Home({navigation}){
   const [modalOpen,setModalOpen] = useState(false);
@@ -13,21 +14,29 @@ export default function Home({navigation}){
     {title: 'Gotta catch them all (again)', rating:3, body:'This deo is a good choice gonna try other variants.',key:'3'},
   ]);
  
+  const addReview =(review) => {
+    review.key = Math.random().toString();
+    setReviews((currentReviews) => {
+      return[review, ...currentReviews]
+    });
+    setModalOpen(false);
+  }
 
   return (
     <View style = {globalStyles.container}>
 
       <Modal visible={modalOpen} animationType='slide'>
-        <View style={globalStyles.modalContent}>
-        <MaterialIcons 
-          name='close'
-          size={24}
-          style={{...globalStyles.modalToggle, ...globalStyles.modalClose}}
-          onPress={()=>setModalOpen(false)}
-      />
-
-          <Text>Starting with Modal :)</Text>
-        </View>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={globalStyles.modalContent}>
+          <MaterialIcons 
+            name='close'
+            size={24}
+            style={{...globalStyles.modalToggle, ...globalStyles.modalClose}}
+            onPress={()=>setModalOpen(false)}
+          />
+          <ReviewForm addReview={addReview}/>
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
       <MaterialIcons 
